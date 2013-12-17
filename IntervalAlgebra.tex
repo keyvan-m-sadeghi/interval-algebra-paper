@@ -1,0 +1,127 @@
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+
+\usepackage{stmaryrd}\usepackage{amsfonts}% If the IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it: e.g.,
+% \documentclass[conference]{../sty/IEEEtran}
+
+\usepackage{times}\usepackage{psfig}% Add all your packages here
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor IEEEtran}
+
+\IEEEoverridecommandlockouts    % to create the author's affliation portion
+                % using \thanks
+
+\textwidth 178mm    % <------ These are the adjustments we made 10/18/2005
+\textheight 239mm   % You may or may not need to adjust these numbers again
+\oddsidemargin -7mm
+\evensidemargin -7mm
+\topmargin -6mm
+\columnsep 5mm
+
+
+
+\makeatother
+
+\begin{document}
+% paper title: Must keep \ \\ \LARGE\bf in it to leave enough margin.
+
+
+
+\title{\ \\
+ \textbf{A Fuzzy/Probabilistic Approach to Uncertain Interval Algebra}}
+
+
+\author{Keyvan Mir Mohammed Sadeghi and Ben Goertzel}
+
+\maketitle
+% avoiding spaces at the end of the author lines is not a problem with
+% conference papers because we don't use \thanks or \IEEEmembership
+% use only for invited papers
+%\specialpapernotice{(Invited Paper)}
+
+
+% make the title area
+
+\begin{abstract}
+A novel approach to uncertain temporal inference is presented. Allen's
+Interval Algebra is extended to fuzzy time-intervals via representing
+the latter as trapeziums with distinct beginning, middle and end.
+An uncertain version of the Interval Algebra composition table is
+developed via running a computer simulation in which a large number
+of fuzzy time-intervals are drawn from an assumed probability distribution,
+and using machine learning to induce uncertain compositional rules
+that hold approximately across the corpus of simulated intervals. 
+\end{abstract}
+% no key words
+
+
+
+\section{Introduction}
+
+\PARstart{T}{his} is the first sentence. the first paragraph.
+the first paragraph. the first paragraph. the first paragraph. the
+first paragraph. the first paragraph. the first paragraph. the first
+paragraph. the first paragraph. the first paragraph. the first paragraph.
+
+Ben can write a couple intro paragraphs \cite{PLN}
+
+
+\subsection{Allen Interval Algebra}
+
+Keyvan should give a brief summary of Allen Interval Algebra here,
+including a table (pasted from elsewhere is OK) illustrating the interval
+relations; AND a copy of the composition table (again, pasted from
+elsewhere is OK). Referees like to look at pictures like everybody
+else does...
+
+
+\subsection{Fuzzy Interval Algebra}
+
+Keyvan should summarize prior papers on Allen Interval Algebra, with
+references
+
+Keyvan should briefly explain why we didn't just use their work
+
+
+\section{A Trapezium Model of Fuzzy Intervals}
+
+Keyvan will explain the modeling of events as trapeziums with beginning,
+middle and end, including a pretty diagram of a trapezium
+
+
+\section{Defining Fuzzy Interval Relations via Convolution}
+
+Keyvan will describe the convolution approach to fuzzy interval relations,
+preferably using a diagram illustrating one example (could be transitivity
+of \textquotedbl{}precedes\textquotedbl{})
+
+
+\section{Probabilistic Estimation of a Fuzzy Interval Relation Composition
+Table}
+
+Keyvan will explain the approach to generating a composition table
+probabilistically
+
+A graph illustrating the transitivity of precedence rule should be
+presented, because 3D graphs are pretty and shiny
+
+We can give example results on the precedence rule, and leave full
+discussion of the composition table till later..
+
+\bibliography{allen}
+ \bibliographystyle{plain}
+
+% that's all folks
+
+\end{document}
