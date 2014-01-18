@@ -1,16 +1,22 @@
-%% LyX 1.6.10 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.1.0dev created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[english,conference]{IEEEtran}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
 
 \makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 
 
-\usepackage{stmaryrd}\usepackage{amsfonts}% If the IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it: e.g.,
 % \documentclass[conference]{../sty/IEEEtran}
 
@@ -32,7 +38,6 @@
 \makeatother
 
 \usepackage{babel}
-
 \begin{document}
 % paper title: Must keep \ \\ \LARGE\bf in it to leave enough margin.
 
@@ -63,21 +68,45 @@ that hold approximately across the corpus of simulated intervals.
 
 \section{Introduction}
 
-\PARstart{T}{his} is the first sentence. the first paragraph.
-the first paragraph. the first paragraph. the first paragraph. the
-first paragraph. the first paragraph. the first paragraph. the first
-paragraph. the first paragraph. the first paragraph. the first paragraph.
-
-Ben can write a couple intro paragraphs \cite{PLN}
+\PARstart{B}{en} can write a couple intro paragraphs \cite{PLN}
 
 
 \subsection{Allen Interval Algebra}
 
-Keyvan should give a brief summary of Allen Interval Algebra here,
-including a table (pasted from elsewhere is OK) illustrating the interval
-relations; AND a copy of the composition table (again, pasted from
-elsewhere is OK). Referees like to look at pictures like everybody
-else does...
+One way to approach temporal reasoning is to represent the events
+as \emph{intervals}. An interval captures some portion of time within
+which some qualities hold. Any temporal event could be represented
+as \textbf{{[}a, b{]}} where \emph{a} is the beginning of the event
+and \emph{b} is the ending. There has been many works focused on addressing
+interval handling in temporal inference, most notable of these are
+Allen's Interval Algebra (IA) \cite{Allen} and Interval Temporal
+Logic (ITL) \cite{Moszkowski-Thesis,Moszkowski-Paper}. 
+
+tfyrtfyrty
+
+\begin{tabular}{|c|c|c|}
+\hline 
+Precedes (p) & Meets (m) & Overlaps (o)\tabularnewline
+\hline 
+\includegraphics[scale=0.4]{p} & \includegraphics[scale=0.4]{m} & \includegraphics[scale=0.4]{o}\tabularnewline
+\hline 
+Preceded By (P) & Met by (M) & Overlapped By (O)\tabularnewline
+\hline 
+\includegraphics[scale=0.4]{pi} & \includegraphics[scale=0.4]{mi} & \includegraphics[scale=0.4]{oi}\tabularnewline
+\hline 
+Finished By (F) & Contains (D) & Starts (s)\tabularnewline
+\hline 
+\includegraphics[scale=0.4]{fi} & \includegraphics[scale=0.4]{di} & \includegraphics[scale=0.4]{s}\tabularnewline
+\hline 
+Finishes (f) & During (d) & Started By (S)\tabularnewline
+\hline 
+\includegraphics[scale=0.4]{f} & \includegraphics[scale=0.4]{d} & \includegraphics[scale=0.4]{si}\tabularnewline
+\hline 
+\multicolumn{1}{c|}{} & Equals (e) & \multicolumn{1}{c}{}\tabularnewline
+\cline{2-2} 
+\multicolumn{1}{c|}{} & \includegraphics[scale=0.4]{e} & \multicolumn{1}{c}{}\tabularnewline
+\cline{2-2} 
+\end{tabular}
 
 
 \subsection{Fuzzy Interval Algebra}

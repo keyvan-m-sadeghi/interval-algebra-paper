@@ -294,7 +294,13 @@ key "Moszkowski-Thesis,Moszkowski-Paper"
 
 \end_inset
 
+.
+ This works expands on the former, adding Fuzzy/Probabilistic characteristics
+ to it.
+\end_layout
 
+\begin_layout Standard
+tfyrtfyrty
 \end_layout
 
 \begin_layout Standard
@@ -653,7 +659,7 @@ Equals (e)
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename e.png
-	scale 50
+	scale 40
 
 \end_inset
 
