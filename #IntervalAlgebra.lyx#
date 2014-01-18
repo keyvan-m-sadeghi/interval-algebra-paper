@@ -256,11 +256,18 @@ key "PLN"
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Allen-Interval-Algebra"
+
+\end_inset
+
 Allen Interval Algebra
 \end_layout
 
 \begin_layout Standard
-One way to approach temporal reasoning is to represent the events as 
+One way to approach temporal reasoning is to represent the events in terms
+ of 
 \emph on
 intervals
 \emph default
@@ -268,8 +275,10 @@ intervals
  An interval captures some portion of time within which some features hold,
  then a temporal event could be represented as 
 \series bold
+\emph on
 [a, b]
 \series default
+\emph default
  where 
 \emph on
 a
@@ -475,7 +484,7 @@ a{r}b
 \emph default
  and 
 \emph on
-b{r}c
+b{s}c
 \emph default
  for singular 
 \emph on
@@ -507,7 +516,9 @@ status collapsed
 \begin_inset Text
 
 \begin_layout Plain Layout
-Precedes (p)
+Precedes 
+\emph on
+(p)
 \end_layout
 
 \end_inset
@@ -516,7 +527,9 @@ Precedes (p)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Meets (m)
+Meets 
+\emph on
+(m)
 \end_layout
 
 \end_inset
@@ -525,7 +538,9 @@ Meets (m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Overlaps (o)
+Overlaps 
+\emph on
+(o)
 \end_layout
 
 \end_inset
@@ -583,7 +598,9 @@ Overlaps (o)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Preceded By (P)
+Preceded by 
+\emph on
+(P)
 \end_layout
 
 \end_inset
@@ -592,7 +609,9 @@ Preceded By (P)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Met by (M)
+Met by 
+\emph on
+(M)
 \end_layout
 
 \end_inset
@@ -601,7 +620,9 @@ Met by (M)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Overlapped By (O)
+Overlapped by 
+\emph on
+(O)
 \end_layout
 
 \end_inset
@@ -659,7 +680,9 @@ Overlapped By (O)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Finished By (F)
+Finished by 
+\emph on
+(F)
 \end_layout
 
 \end_inset
@@ -668,7 +691,9 @@ Finished By (F)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Contains (D)
+Contains 
+\emph on
+(D)
 \end_layout
 
 \end_inset
@@ -677,7 +702,9 @@ Contains (D)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Starts (s)
+Starts 
+\emph on
+(s)
 \end_layout
 
 \end_inset
@@ -735,7 +762,9 @@ Starts (s)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Finishes (f)
+Finishes 
+\emph on
+(f)
 \end_layout
 
 \end_inset
@@ -744,7 +773,9 @@ Finishes (f)
 \begin_inset Text
 
 \begin_layout Plain Layout
-During (d)
+During 
+\emph on
+(d)
 \end_layout
 
 \end_inset
@@ -753,7 +784,9 @@ During (d)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Started By (S)
+Started by 
+\emph on
+(S)
 \end_layout
 
 \end_inset
@@ -811,7 +844,9 @@ Started By (S)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Equals (e)
+Equals 
+\emph on
+(e)
 \end_layout
 
 \end_inset
@@ -1230,7 +1265,7 @@ name "tab:Examples-of-operations"
 
 \end_inset
 
-Examples of operations on intervals
+Examples of operations on relations
 \end_layout
 
 \end_inset
@@ -3484,7 +3519,38 @@ Fuzzy Interval Algebra
 \end_layout
 
 \begin_layout Standard
-Keyvan should summarize prior papers on Allen Interval Algebra, with references
+The original IA provides sufficient means for crisp reasoning.
+ Moreover, one can use the classic IA for systems that have their knowledge
+ represented as 
+\emph on
+TRUE
+\emph default
+ and 
+\emph on
+FALSE
+\emph default
+ propositions.
+ However, most modern inference engines utilise some sort of fuzzy/probabilistic
+ representation instead of (or in parallel to) the old-fashioned binary
+ ones.
+ Therefore, such systems will not be able to use IA in it's basic form.
+ Accordingly, a substantial amount of work has been carried out to adapt
+ IA to the aforementioned paradigms.
+ Related works that have been done in this regards fall into two general
+ categories: I) Probabilistic extensions and II) Fuzzy models of IA.
+ Each of these approaches are designed to solve a different set of problems/setu
+ps.
+\end_layout
+
+\begin_layout Standard
+Probabilistic models are usually adopted in scenarios where there is some
+ level of uncertainty involved in reasoning about given pieces of knowledge.
+ The probabilistic methods themselves are scattered in many different sub-paradi
+gms.
+ So in order to offer a generalised solution that could be adopted by all
+ systems in which some probabilistic representations is used, it is often
+ the case that probabilistic extensions of IA expand on the concept of "probabil
+ity distributions".
 \end_layout
 
 \begin_layout Standard
