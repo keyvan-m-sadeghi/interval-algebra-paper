@@ -478,15 +478,15 @@ area such as {[}1234{]} and instead a uniform distribution of uncertainty
 has been assumed. However, it is understandable why this path has
 been taken, uniform distribution has the quality of being a meaningful
 average over the set of different possible distributions. Accordingly,
-the ``Trapezium Model'' is identified as the single form most suitable
-for the generic event representation. A Trapezium is essentially an
-event with uniform beginning and ending portions. Uniform distribution
+the ``Trapezium Model'' is identified as the single most suitable
+form for the generic event representation. A Trapezium is essentially
+an event with uniform beginning and ending portions. Uniform distribution
 has a very desirable feature, both it's start and end bounds are finite.
 As a result, the event will be divided into three distinct portions,
 the beginning stage, \emph{{[}a, beginning{]}}, the happening stage,
 \emph{{[}beginning, ending{]}} and the ending stage, \emph{{[}ending,
 b{]}}. Fig \ref{fig:Trapezium} illustrates a Trapezium. To put it
-in a more familiar language, the event starts happening at \emph{a}
+in a more familiar language, the event starts to happen at \emph{a}
 and our confidence about it's happening increases linearly up to time-step
 \emph{beginning}. At this point, we have no more doubts that the event
 is happening and it continues to be so until the \emph{ending} time-step.
@@ -510,7 +510,7 @@ relation handling. As pointed out before, the sufficient means for
 having the relation formulas being handled by the generic mechanism
 provided in the previous section is to define calculations for \emph{before},
 \emph{same} and \emph{after}. Next couple of sections have been dedicated
-to this subject, with a special emphasis on the Trapezium model.
+to this subject, with an intended emphasis on the Trapezium model.
 
 
 \subsection{\label{sub:Convolution}Convolution Logic}
@@ -518,29 +518,84 @@ to this subject, with a special emphasis on the Trapezium model.
 Convolution is perhaps the best-suited way to approach studying the
 relations between two events in a pure probabilistic context. Assuming
 the two random variables X and Y belong, respectively, to the probability
-measures $\mu$ and $\nu$ in the $\left(R,~+\right)$ space, $Convolve\left(\mu,~-\nu\right)$
-yields the probability distribution for the random variable $\left(X-Y\right)$.
-Knowing the distribution of$\left(X-Y\right)$ variable is of importance
+measures \emph{F} and \emph{G} in the $\left(R,~+\right)$ space,
+$Convolve\left(F,~-G\right)$ yields the probability distribution
+for the random variable $X-Y$ (\emph{-G} denotes \emph{G} horizontally
+inversed). Knowing the distribution of $X-Y$ variable is of importance
 since the amount that the two measures overlap, or more precisely,
 are \emph{same}, before and \emph{after}, could be calculated from
 it:
 \begin{enumerate}
-\item $a{}_{\mu}<X<b_{\mu}$
-\item $a{}_{\nu}<Y<b_{\nu}$
-\item $\left(1,~2\right)\Rightarrow$$a{}_{\mu}-a{}_{\nu}<X-Y<b_{\mu}-b_{\nu}$,
-we transform $Convolve\left(\mu,~-\nu\right)$ function to fall within
+\item $a{}_{F}<X<b_{F}$
+\item $a{}_{G}<Y<b_{G}$
+\item $\left(1,~2\right)\Rightarrow$$a{}_{F}-a{}_{G}<X-Y<b_{F}-b_{G}$,
+we transform $Convolve\left(F,~-G\right)$ function to fall within
 this interval
-\item let $a_{\omega}=max\left(a{}_{\mu},~a{}_{\nu}\right)$ and $b_{\omega}=min\left(b{}_{\mu},~b{}_{\nu}\right)$
-\item overlap interval of $\mu$ and $\nu$ is $\left[a{}_{\omega},~b{}_{\omega}\right]$
-iff $a{}_{\omega}<b{}_{\omega}$ (otherwise the two measures do not
-overlap)
-\item $before\left(\mu,~\nu\right)=\intop_{-\infty}^{a_{\omega}}Convolve\left(\mu,~-\nu\right)dt$
-\item $same\left(\mu,~\nu\right)=\intop_{a_{\omega}}^{b_{\omega}}Convolve\left(\mu,~-\nu\right)dt$
-\item $after\left(\mu,~\nu\right)=\intop_{b_{\omega}}^{+\infty}Convolve\left(\mu,~-\nu\right)dt$
+\item let $a_{H}=max\left(a{}_{F},~a{}_{G}\right)$ and $b_{H}=min\left(b{}_{F},~b{}_{G}\right)$
+\item overlap interval of $F$ and $G$ is $\left[a{}_{H},~b{}_{H}\right]$
+\emph{iff} $a{}_{H}<b{}_{H}$, these are the bounds in which \emph{F}
+and \emph{G} could be the \emph{same}
+\item let $L=\left|a_{H}-b_{H}\right|$
+\item $before\left(F,~G\right)=\intop_{-\infty}^{-L}Convolve\left(F,~-G\right)dt$
+\item $same\left(F,~G\right)=\intop_{-L}^{L}Convolve\left(F,~-G\right)dt$
+\item $after\left(F,~G\right)=\intop_{L}^{+\infty}Convolve\left(F,~-G\right)dt$
 \end{enumerate}
+One catch in the above approach is that not all distributions have
+finite start and end bounds, normal for example, falls is $\left(-\infty,~+\infty\right)$.
+This could be dealt with by the \emph{Interval} operation that all
+standard distributions support. $Interval\left(dist,~\alpha\right)$
+calculates the bounds that cover $\alpha$ portion of the distribution.
+Setting $\alpha=1-\varepsilon$ guarantees getting finite bounds for
+any distribution.
+
+Fig \ref{fig:Convolution-Examples} shows the outcome of the convolution
+logic for a number of distributions, while Fig \ref{fig:Convolution-Interpolation}
+demonstrates how \emph{before}, \emph{same} and \emph{after} interpolate
+by having \emph{G} fixed in the center and sliding \emph{F} from left
+to right.
+
+\begin{figure}
+\protect\caption{\label{fig:Convolution-Examples}Convolution Logic Examples}
+\end{figure}
+
+
+\begin{figure}
+\protect\caption{\label{fig:Convolution-Interpolation}Interpolation of \emph{same},
+\emph{before} and \emph{after} in Convolution Logic}
+\end{figure}
+
+
 
 \subsection{\label{sub:Geometric-Mean}Geometric Mean Logic}
 
+A desired feature for fuzzy degrees corresponding to relations is
+for them to vary linearly, this feature is missing in the Convolution
+Logic as evident in Fig \ref{fig:Convolution-Interpolation}. Consequently,
+the need for a logic that qualifies in this context seems obvious.
+A simple, yet effective measure is Geometric Mean (\emph{GM}). \emph{GM}
+has a subtle quality, it amounts to zero when either of the operands
+are zero. Thus, it provides a solid ground for defining \emph{same:}
+\begin{enumerate}
+\item let \emph{F and G} be probability measures
+\item $H\left(t\right)=\sqrt{F\left(t\right)G\left(t\right)},~t\in\left(-\infty,~+\infty\right)$
+\item $same\left(F,~G\right)=\int_{-\infty}^{+\infty}H\left(t\right)dt$
+\end{enumerate}
+In addition, we would like \emph{before} and \emph{after} to interpolate
+linearly in a sensible manner, partitioning the $1-same$ space, we
+will utilise four standard attributes of probability distributions,
+mean ($\mu$), standard deviation ($\sigma$), skewness (\emph{s})
+and kurtosis (\emph{k}):
+\begin{enumerate}
+\item $F^{\prime}\left(t\right)=F\left(\sigma_{F}t+\mu_{F}\right)$ and
+$G^{\prime}\left(t\right)=G\left(\sigma_{G}t+\mu_{G}\right)$, $F^{\prime}$
+and $G^{\prime}$ are standardised versions of \emph{F} and \emph{G}
+\item $H^{\prime}\left(t\right)=$$\sqrt{F^{\prime}\left(t\right)G^{\prime}\left(t\right)}$
+\item $\alpha=\left|\sigma_{F}-\sigma_{G}\right|+\left|s_{F}-s_{G}\right|+\left|k_{F}-k_{G}\right|$
+\item $H^{\prime\prime}\left(t\right)=H^{\prime}\left(\frac{t}{\alpha}\right)$
+\item $\delta=\mu_{F}-\mu_{G}$
+\item $before\left(F,~G\right)=$$\frac{\intop_{\delta}^{+\infty}H^{\prime\prime}\left(t\right)dt}{\intop_{-\infty}^{+\infty}H^{\prime\prime}\left(t\right)dt}$
+\item $after\left(F,~G\right)=$$\frac{\intop_{-\infty}^{\delta}H^{\prime\prime}\left(t\right)dt}{\intop_{-\infty}^{+\infty}H^{\prime\prime}\left(t\right)dt}$
+\end{enumerate}
 
 \section{\label{sec:Composition}Probabilistic Estimation of a Fuzzy Interval
 Relation Composition Table}

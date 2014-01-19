@@ -4574,7 +4574,7 @@ Trapezium Model
 \begin_inset Quotes erd
 \end_inset
 
- is identified as the single form most suitable for the generic event representa
+ is identified as the single most suitable form for the generic event representa
 tion.
  A Trapezium is essentially an event with uniform beginning and ending portions.
  Uniform distribution has a very desirable feature, both it's start and
@@ -4601,7 +4601,7 @@ reference "fig:Trapezium"
 \end_inset
 
  illustrates a Trapezium.
- To put it in a more familiar language, the event starts happening at 
+ To put it in a more familiar language, the event starts to happen at 
 \emph on
 a
 \emph default
@@ -4693,7 +4693,7 @@ same
 after
 \emph default
 .
- Next couple of sections have been dedicated to this subject, with a special
+ Next couple of sections have been dedicated to this subject, with an intended
  emphasis on the Trapezium model.
 \end_layout
 
@@ -4712,28 +4712,36 @@ Convolution is perhaps the best-suited way to approach studying the relations
  between two events in a pure probabilistic context.
  Assuming the two random variables X and Y belong, respectively, to the
  probability measures 
-\begin_inset Formula $\mu$
-\end_inset
-
+\emph on
+F
+\emph default
  and 
-\begin_inset Formula $\nu$
-\end_inset
-
+\emph on
+G
+\emph default
  in the 
 \begin_inset Formula $\left(R,~+\right)$
 \end_inset
 
  space, 
-\begin_inset Formula $Convolve\left(\mu,~-\nu\right)$
+\begin_inset Formula $Convolve\left(F,~-G\right)$
 \end_inset
 
  yields the probability distribution for the random variable 
-\begin_inset Formula $\left(X-Y\right)$
+\begin_inset Formula $X-Y$
 \end_inset
 
-.
- Knowing the distribution of
-\begin_inset Formula $\left(X-Y\right)$
+ (
+\emph on
+-G
+\emph default
+ denotes 
+\emph on
+G
+\emph default
+ horizontally inversed).
+ Knowing the distribution of 
+\begin_inset Formula $X-Y$
 \end_inset
 
  variable is of importance since the amount that the two measures overlap,
@@ -4749,14 +4757,14 @@ after
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $a{}_{\mu}<X<b_{\mu}$
+\begin_inset Formula $a{}_{F}<X<b_{F}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $a{}_{\nu}<Y<b_{\nu}$
+\begin_inset Formula $a{}_{G}<Y<b_{G}$
 \end_inset
 
 
@@ -4767,11 +4775,11 @@ after
 \end_inset
 
 
-\begin_inset Formula $a{}_{\mu}-a{}_{\nu}<X-Y<b_{\mu}-b_{\nu}$
+\begin_inset Formula $a{}_{F}-a{}_{G}<X-Y<b_{F}-b_{G}$
 \end_inset
 
 , we transform 
-\begin_inset Formula $Convolve\left(\mu,~-\nu\right)$
+\begin_inset Formula $Convolve\left(F,~-G\right)$
 \end_inset
 
  function to fall within this interval
@@ -4779,11 +4787,11 @@ after
 
 \begin_layout Enumerate
 let 
-\begin_inset Formula $a_{\omega}=max\left(a{}_{\mu},~a{}_{\nu}\right)$
+\begin_inset Formula $a_{H}=max\left(a{}_{F},~a{}_{G}\right)$
 \end_inset
 
  and 
-\begin_inset Formula $b_{\omega}=min\left(b{}_{\mu},~b{}_{\nu}\right)$
+\begin_inset Formula $b_{H}=min\left(b{}_{F},~b{}_{G}\right)$
 \end_inset
 
 
@@ -4791,40 +4799,199 @@ let
 
 \begin_layout Enumerate
 overlap interval of 
-\begin_inset Formula $\mu$
+\begin_inset Formula $F$
 \end_inset
 
  and 
-\begin_inset Formula $\nu$
+\begin_inset Formula $G$
 \end_inset
 
  is 
-\begin_inset Formula $\left[a{}_{\omega},~b{}_{\omega}\right]$
+\begin_inset Formula $\left[a{}_{H},~b{}_{H}\right]$
 \end_inset
 
- iff 
-\begin_inset Formula $a{}_{\omega}<b{}_{\omega}$
+ 
+\emph on
+iff
+\emph default
+ 
+\begin_inset Formula $a{}_{H}<b{}_{H}$
 \end_inset
 
- (otherwise the two measures do not overlap)
+, these are the bounds in which 
+\emph on
+F
+\emph default
+ and 
+\emph on
+G
+\emph default
+ could be the 
+\emph on
+same
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $before\left(\mu,~\nu\right)=\intop_{-\infty}^{a_{\omega}}Convolve\left(\mu,~-\nu\right)dt$
+let 
+\begin_inset Formula $L=\left|a_{H}-b_{H}\right|$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $same\left(\mu,~\nu\right)=\intop_{a_{\omega}}^{b_{\omega}}Convolve\left(\mu,~-\nu\right)dt$
+\begin_inset Formula $before\left(F,~G\right)=\intop_{-\infty}^{-L}Convolve\left(F,~-G\right)dt$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $after\left(\mu,~\nu\right)=\intop_{b_{\omega}}^{+\infty}Convolve\left(\mu,~-\nu\right)dt$
+\begin_inset Formula $same\left(F,~G\right)=\intop_{-L}^{L}Convolve\left(F,~-G\right)dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $after\left(F,~G\right)=\intop_{L}^{+\infty}Convolve\left(F,~-G\right)dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One catch in the above approach is that not all distributions have finite
+ start and end bounds, normal for example, falls is 
+\begin_inset Formula $\left(-\infty,~+\infty\right)$
+\end_inset
+
+.
+ This could be dealt with by the 
+\emph on
+Interval
+\emph default
+ operation that all standard distributions support.
+ 
+\begin_inset Formula $Interval\left(dist,~\alpha\right)$
+\end_inset
+
+ calculates the bounds that cover 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ portion of the distribution.
+ Setting 
+\begin_inset Formula $\alpha=1-\varepsilon$
+\end_inset
+
+ guarantees getting finite bounds for any distribution.
+\end_layout
+
+\begin_layout Standard
+Fig 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Convolution-Examples"
+
+\end_inset
+
+ shows the outcome of the convolution logic for a number of distributions,
+ while Fig 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Convolution-Interpolation"
+
+\end_inset
+
+ demonstrates how 
+\emph on
+before
+\emph default
+, 
+\emph on
+same
+\emph default
+ and 
+\emph on
+after
+\emph default
+ interpolate by having 
+\emph on
+G
+\emph default
+ fixed in the center and sliding 
+\emph on
+F
+\emph default
+ from left to right.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Convolution-Examples"
+
+\end_inset
+
+Convolution Logic Examples
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Convolution-Interpolation"
+
+\end_inset
+
+Interpolation of 
+\emph on
+same
+\emph default
+, 
+\emph on
+before
+\emph default
+ and 
+\emph on
+after
+\emph default
+ in Convolution Logic
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -4838,6 +5005,169 @@ name "sub:Geometric-Mean"
 \end_inset
 
 Geometric Mean Logic
+\end_layout
+
+\begin_layout Standard
+A desired feature for fuzzy degrees corresponding to relations is for them
+ to vary linearly, this feature is missing in the Convolution Logic as evident
+ in Fig 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Convolution-Interpolation"
+
+\end_inset
+
+.
+ Consequently, the need for a logic that qualifies in this context seems
+ obvious.
+ A simple, yet effective measure is Geometric Mean (
+\emph on
+GM
+\emph default
+).
+ 
+\emph on
+GM
+\emph default
+ has a subtle quality, it amounts to zero when either of the operands are
+ zero.
+ Thus, it provides a solid ground for defining 
+\emph on
+same:
+\end_layout
+
+\begin_layout Enumerate
+let 
+\emph on
+F and G
+\emph default
+ be probability measures
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $H\left(t\right)=\sqrt{F\left(t\right)G\left(t\right)},~t\in\left(-\infty,~+\infty\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $same\left(F,~G\right)=\int_{-\infty}^{+\infty}H\left(t\right)dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In addition, we would like 
+\emph on
+before
+\emph default
+ and 
+\emph on
+after
+\emph default
+ to interpolate linearly in a sensible manner, partitioning the 
+\begin_inset Formula $1-same$
+\end_inset
+
+ space, we will utilise four standard attributes of probability distributions,
+ mean (
+\begin_inset Formula $\mu$
+\end_inset
+
+), standard deviation (
+\begin_inset Formula $\sigma$
+\end_inset
+
+), skewness (
+\emph on
+s
+\emph default
+) and kurtosis (
+\emph on
+k
+\emph default
+):
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $F^{\prime}\left(t\right)=F\left(\sigma_{F}t+\mu_{F}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $G^{\prime}\left(t\right)=G\left(\sigma_{G}t+\mu_{G}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $F^{\prime}$
+\end_inset
+
+ and 
+\begin_inset Formula $G^{\prime}$
+\end_inset
+
+ are standardised versions of 
+\emph on
+F
+\emph default
+ and 
+\emph on
+G
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $H^{\prime}\left(t\right)=$
+\end_inset
+
+
+\begin_inset Formula $\sqrt{F^{\prime}\left(t\right)G^{\prime}\left(t\right)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\alpha=\left|\sigma_{F}-\sigma_{G}\right|+\left|s_{F}-s_{G}\right|+\left|k_{F}-k_{G}\right|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $H^{\prime\prime}\left(t\right)=H^{\prime}\left(\frac{t}{\alpha}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\delta=\mu_{F}-\mu_{G}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $before\left(F,~G\right)=$
+\end_inset
+
+
+\begin_inset Formula $\frac{\intop_{\delta}^{+\infty}H^{\prime\prime}\left(t\right)dt}{\intop_{-\infty}^{+\infty}H^{\prime\prime}\left(t\right)dt}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $after\left(F,~G\right)=$
+\end_inset
+
+
+\begin_inset Formula $\frac{\intop_{-\infty}^{\delta}H^{\prime\prime}\left(t\right)dt}{\intop_{-\infty}^{+\infty}H^{\prime\prime}\left(t\right)dt}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
