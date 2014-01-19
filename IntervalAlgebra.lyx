@@ -3836,6 +3836,58 @@ membership_function
 \end_layout
 
 \begin_layout Standard
+An event resulting from a normal and an exponential distribution is shown
+ in Fig 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Event-Example"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Fig1.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Event-Example"
+
+\end_inset
+
+Example of a temporal event
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 In the case that one would like to initialise an event by providing fuzzy
  sets representing the 
 \emph on
@@ -3900,7 +3952,7 @@ membership_function
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -4025,16 +4077,7 @@ Mapping fuzzy sets to probability distributions
 \end_layout
 
 \begin_layout Standard
-An event resulting from a normal and an exponential distribution is shown
- in Fig 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Event-Example"
-
-\end_inset
-
-.
- To be consistent with 
+To be consistent with 
 \emph on
 REDC-IA
 \emph default
@@ -4316,46 +4359,6 @@ after
 \begin_inset Float figure
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Fig1.png
-	scale 20
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Event-Example"
-
-\end_inset
-
-Example of a temporal event
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
 status collapsed
 
 \begin_layout Plain Layout
@@ -4538,8 +4541,160 @@ A Trapezium Model of Fuzzy/Probabilistic Intervals
 \end_layout
 
 \begin_layout Standard
-Keyvan will explain the modeling of events as trapeziums with beginning,
- middle and end, including a pretty diagram of a trapezium
+Now that the temporal events are defined in their broad form, it gets to
+ the point of proposing a specific instance that is suitable for general
+ problems.
+ In doing so, it should be taken into account that such generalisation must
+ be capable of handling both uncertainty types, direct and indirect (described
+ in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Fuzzy-Interval-Algebra"
+
+\end_inset
+
+).
+ In the case of indirect observation, it is a common practice to assume
+ a uniform uncertainty over the period of the beginning and ending intervals,
+ as in [1234].
+ Direct observation on the other hand often involves knowledge coming from
+ natural or artificial sources, most of such events have either normal or
+ exponential nature to them.
+ Interestingly, this has not been considered in related works in this area
+ such as [1234] and instead a uniform distribution of uncertainty has been
+ assumed.
+ However, it is understandable why this path has been taken, uniform distributio
+n has the quality of being a meaningful average over the set of different
+ possible distributions.
+ Accordingly, the 
+\begin_inset Quotes eld
+\end_inset
+
+Trapezium Model
+\begin_inset Quotes erd
+\end_inset
+
+ is identified as the single form most suitable for the generic event representa
+tion.
+ A Trapezium is essentially an event with uniform beginning and ending portions.
+ Uniform distribution has a very desirable feature, both it's start and
+ end bounds are finite.
+ As a result, the event will be divided into three distinct portions, the
+ beginning stage, 
+\emph on
+[a, beginning]
+\emph default
+, the happening stage, 
+\emph on
+[beginning, ending]
+\emph default
+ and the ending stage, 
+\emph on
+[ending, b]
+\emph default
+.
+ Fig 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Trapezium"
+
+\end_inset
+
+ illustrates a Trapezium.
+ To put it in a more familiar language, the event starts happening at 
+\emph on
+a
+\emph default
+ and our confidence about it's happening increases linearly up to time-step
+ 
+\emph on
+beginning
+\emph default
+.
+ At this point, we have no more doubts that the event is happening and it
+ continues to be so until the 
+\emph on
+ending
+\emph default
+ time-step.
+ It is only from after the 
+\emph on
+ending
+\emph default
+ time-step that we realise that the event has entered it's ending stage
+ and our confidence about the happening of event decreases gradually to
+ the 
+\emph on
+b
+\emph default
+ time-step.
+ At time-step 
+\emph on
+b
+\emph default
+, we are sure that the event has indeed been ended.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Fig4.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Trapezium"
+
+\end_inset
+
+A Trapezium
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next step is to present relation formulas for approaching Trapezium relation
+ handling.
+ As pointed out before, the sufficient means for having the relation formulas
+ being handled by the generic mechanism provided in the previous section
+ is to define calculations for 
+\emph on
+before
+\emph default
+, 
+\emph on
+same
+\emph default
+ and 
+\emph on
+after
+\emph default
+.
+ Next couple of sections have been dedicated to this subject, with a special
+ emphasis on the Trapezium model.
 \end_layout
 
 \begin_layout Subsection
@@ -4553,9 +4708,126 @@ Convolution Logic
 \end_layout
 
 \begin_layout Standard
-Keyvan will describe the convolution approach to fuzzy interval relations,
- preferably using a diagram illustrating one example (could be transitivity
- of "precedes")
+Convolution is perhaps the best-suited way to approach studying the relations
+ between two events in a pure probabilistic context.
+ Assuming the two random variables X and Y belong, respectively, to the
+ probability measures 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\nu$
+\end_inset
+
+ in the 
+\begin_inset Formula $\left(R,~+\right)$
+\end_inset
+
+ space, 
+\begin_inset Formula $Convolve\left(\mu,~-\nu\right)$
+\end_inset
+
+ yields the probability distribution for the random variable 
+\begin_inset Formula $\left(X-Y\right)$
+\end_inset
+
+.
+ Knowing the distribution of
+\begin_inset Formula $\left(X-Y\right)$
+\end_inset
+
+ variable is of importance since the amount that the two measures overlap,
+ or more precisely, are 
+\emph on
+same
+\emph default
+, before and 
+\emph on
+after
+\emph default
+, could be calculated from it:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $a{}_{\mu}<X<b_{\mu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $a{}_{\nu}<Y<b_{\nu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(1,~2\right)\Rightarrow$
+\end_inset
+
+
+\begin_inset Formula $a{}_{\mu}-a{}_{\nu}<X-Y<b_{\mu}-b_{\nu}$
+\end_inset
+
+, we transform 
+\begin_inset Formula $Convolve\left(\mu,~-\nu\right)$
+\end_inset
+
+ function to fall within this interval
+\end_layout
+
+\begin_layout Enumerate
+let 
+\begin_inset Formula $a_{\omega}=max\left(a{}_{\mu},~a{}_{\nu}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{\omega}=min\left(b{}_{\mu},~b{}_{\nu}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+overlap interval of 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\nu$
+\end_inset
+
+ is 
+\begin_inset Formula $\left[a{}_{\omega},~b{}_{\omega}\right]$
+\end_inset
+
+ iff 
+\begin_inset Formula $a{}_{\omega}<b{}_{\omega}$
+\end_inset
+
+ (otherwise the two measures do not overlap)
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $before\left(\mu,~\nu\right)=\intop_{-\infty}^{a_{\omega}}Convolve\left(\mu,~-\nu\right)dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $same\left(\mu,~\nu\right)=\intop_{a_{\omega}}^{b_{\omega}}Convolve\left(\mu,~-\nu\right)dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $after\left(\mu,~\nu\right)=\intop_{b_{\omega}}^{+\infty}Convolve\left(\mu,~-\nu\right)dt$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
