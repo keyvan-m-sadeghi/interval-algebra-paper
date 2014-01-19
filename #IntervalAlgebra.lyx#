@@ -129,7 +129,7 @@ bf in it to leave enough margin.
 
  
 \series bold
-A Fuzzy/Probabilistic Approach to Uncertain Interval Algebra
+A Unified Approach to Fuzzy and Probabilistic Uncertain Interval Algebra
 \end_layout
 
 \begin_layout Author
@@ -349,19 +349,19 @@ b
 \emph on
 {s}
 \emph default
- (starts) is defined as 1) 
+ (starts) is defined as 
 \begin_inset Formula $beginning_{a}=beginning_{b}$
 \end_inset
 
- 2) 
+ AND 
 \begin_inset Formula $beginning_{a}<ending_{b}$
 \end_inset
 
- 3) 
+ AND 
 \begin_inset Formula $ending_{a}>beginning_{b}$
 \end_inset
 
- 4) 
+ AND 
 \begin_inset Formula $ending_{a}<ending_{b}$
 \end_inset
 
@@ -446,7 +446,7 @@ Composition
 \emph on
 r.s
 \emph default
-, the set of all possible relations for intervals 
+, the set of all possible relations between intervals 
 \emph on
 a
 \emph default
@@ -454,7 +454,7 @@ a
 \emph on
 c
 \emph default
- having 
+, having 
 \emph on
 a{r}b
 \emph default
@@ -471,7 +471,7 @@ reference "tab:Examples-of-operations"
 
 \end_inset
 
- and Table 
+, Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Composition"
@@ -502,6 +502,24 @@ s
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Temporal-Relations"
+
+\end_inset
+
+Temporal relations in Interval Algebra
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -912,24 +930,6 @@ Equals
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Temporal-Relations"
-
-\end_inset
-
-Temporal relations in Interval Algebra
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -940,6 +940,24 @@ Temporal relations in Interval Algebra
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Examples-of-operations"
+
+\end_inset
+
+Examples of operations on relations
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
@@ -1255,24 +1273,6 @@ Composition
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Examples-of-operations"
-
-\end_inset
-
-Examples of operations on relations
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -1283,6 +1283,24 @@ Examples of operations on relations
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Composition"
+
+\end_inset
+
+Composition in Interval Algebra
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -3491,30 +3509,18 @@ full
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Composition"
-
-\end_inset
-
-Composition in Interval Algebra
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Fuzzy-Interval-Algebra"
+
+\end_inset
+
 Fuzzy Interval Algebra
 \end_layout
 
@@ -3558,16 +3564,1067 @@ Keyvan should briefly explain why we didn't just use their work
 \end_layout
 
 \begin_layout Section
-A Trapezium Model of Fuzzy Intervals
+A Generic Fuzzy/Probabilistic Model of Interval Algebra
 \end_layout
 
 \begin_layout Standard
-Keyvan will explain the modeling of events as trapeziums with beginning,
- middle and end, including a pretty diagram of a trapezium
+As described in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Fuzzy-Interval-Algebra"
+
+\end_inset
+
+, the previous models of IA fail to provide a mapping between the fuzzy
+ and probabilistic paradigms.
+ The main focus here, accordingly, is to formalise a minimal framework that
+ supports both approaches.
+ A minimum ground for such framework, therefore, is constituted from the
+ following features:
 \end_layout
 
-\begin_layout Section
-Defining Fuzzy Interval Relations via Convolution
+\begin_layout Description
+Accommodate
+\begin_inset space ~
+\end_inset
+
+the
+\begin_inset space ~
+\end_inset
+
+Fuzzy
+\begin_inset space ~
+\end_inset
+
+Model one should be able to encode intervals in terms of fuzzy sets, and
+ also be able to query the degree to which the event is happening in any
+ interval.
+ Let us call this 
+\series bold
+\emph on
+(ACC-FUZZ)
+\end_layout
+
+\begin_layout Description
+Accommodate
+\begin_inset space ~
+\end_inset
+
+the
+\begin_inset space ~
+\end_inset
+
+Probabilistic
+\begin_inset space ~
+\end_inset
+
+Model it should be possible to define the interval in terms of probability
+ distributions 
+\series bold
+\emph on
+(ACC-PROB)
+\end_layout
+
+\begin_layout Description
+Reduction
+\begin_inset space ~
+\end_inset
+
+to
+\begin_inset space ~
+\end_inset
+
+original
+\begin_inset space ~
+\end_inset
+
+IA the model must be reducible to the original IA, i.e.
+ the necessary means for defining a crisp interval and the IA operations
+ both should be present, and the logic of interval relations should be analogous
+ to that of Allen's 
+\series bold
+\emph on
+(REDC-IA)
+\end_layout
+
+\begin_layout Description
+Extensibility the framework should allow customisation of the logic behind
+ relation handling 
+\series bold
+\emph on
+(EXTN)
+\end_layout
+
+\begin_layout Standard
+First off, the unit of work will be changed to 
+\emph on
+event
+\emph default
+ from 
+\emph on
+interval
+\emph default
+.
+ The reason for the name change is that an Allen 
+\emph on
+interval
+\emph default
+ is a one dimensional entity whereas an 
+\emph on
+event
+\emph default
+ has two dimensions, time and certainty.
+ Starting with 
+\emph on
+ACC-PROB
+\emph default
+, an event is described by two probability distributions, 
+\emph on
+dist_beg
+\emph default
+ and 
+\emph on
+dist_end
+\emph default
+.
+ 
+\emph on
+dist_beg
+\emph default
+ denotes the 
+\begin_inset Quotes eld
+\end_inset
+
+probability that event is in it's beginning stage
+\begin_inset Quotes erd
+\end_inset
+
+, expanding on the original IA where beginning was a single point, a probabilist
+ic beginning would be a probability distribution over the interval of 
+\emph on
+[a, beginning]
+\emph default
+.
+ Similarly, 
+\emph on
+dist_end
+\emph default
+ is the 
+\begin_inset Quotes eld
+\end_inset
+
+probability that event is in it's ending stage
+\begin_inset Quotes erd
+\end_inset
+
+, over the 
+\emph on
+[ending, b]
+\emph default
+ interval.
+ For the event to be valid, 
+\emph on
+dist_beg
+\emph default
+ and 
+\emph on
+dist_end
+\emph default
+ should satisfy the condition below:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $𝜇_{dist\textunderscore beg}<\text{𝜇}_{dist\textunderscore end}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+read: mean of 
+\emph on
+dist_beg
+\emph default
+ should be lower than mean of 
+\emph on
+dist_end
+\end_layout
+
+\begin_layout Standard
+We then define a 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $membership\textunderscore function$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ so as to address 
+\emph on
+ACC-FUZZ
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $membership\textunderscore function\left(t\right)=dist\textunderscore beg.cdf\left(t\right)-dist\textunderscore end.cdf\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+-- where 
+\emph on
+cdf
+\emph default
+ is the cumulative distribution function of the probability distribution
+\end_layout
+
+\begin_layout Standard
+To query the fuzzy degree of the event in an interval, one should use the
+ 
+\emph on
+Degree function
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\text{𝒟}\left(mf\left(t\right),~\left[a,~b\right]\right)=\frac{\intop_{a}^{b}mf\left(t\right)dt}{b-a}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+-- where 
+\emph on
+mf
+\emph default
+ is the 
+\emph on
+membership_function
+\emph default
+ of the event
+\end_layout
+
+\begin_layout Standard
+An event resulting from a normal and an exponential distribution is shown
+ in Fig 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Event-Example"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Fig1.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Event-Example"
+
+\end_inset
+
+Example of a temporal event
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the case that one would like to initialise an event by providing fuzzy
+ sets representing the 
+\emph on
+membership_function
+\emph default
+, two sets are required: one corresponding to the beginning portion of the
+ event and one for the ending.
+ For the beginning set to be valid, it should start with a value less than
+ one in it's first time-step and climbs up to one in the later steps.
+ The ending set should start from one and decrease over time.
+ In addition, the first time-step of the beginning set should have a lower
+ value than the first one in the ending set.
+ Upon satisfaction of these conditions, one can constitute the corresponding
+ probability distributions, the beginning and ending sets could be viewed
+ as the 
+\emph on
+cdf
+\emph default
+ functions of the distributions (
+\begin_inset Formula $1-cdf$
+\end_inset
+
+ in the case of the ending set), and the relating probability density function
+ (
+\emph on
+pdf
+\emph default
+) would be the derivative of the 
+\emph on
+cdf
+\emph default
+.
+ The mean of such distribution is calculated by weighted averaging over
+ it's 
+\emph on
+pdf
+\emph default
+ function (mean is usually used in calculating event relations, therefore
+ it is a requirement for any custom probability distribution).
+ This process is demonstrated in Fig 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Fuzzy-Sets"
+
+\end_inset
+
+, as evident in Fig 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Fuzzy-Sets"
+
+\end_inset
+
+b, the two sets can overlap in which case the 
+\emph on
+membership_function
+\emph default
+ will not reach the value one.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="1">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Fig3a.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+a) set_beg = {1: 0, 2: 0.1, 3: 0.3, 4: 0.7, 5: 1}, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+set_end = {6: 1, 7: 0.9, 8: 0.6, 9: 0.1, 10: 0}
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Fig3b.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+a) set_beg = {1: 0, 2: 0.1, 3: 0.3, 4: 0.7, 5: 1},
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+ set_end = {3.5: 1, 4.5: 0.9, 8: 0.6, 9: 0.1, 10: 0}
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fuzzy-Sets"
+
+\end_inset
+
+Mapping fuzzy sets to probability distributions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To be consistent with 
+\emph on
+REDC-IA
+\emph default
+, a custom distribution, 
+\emph on
+point_dist
+\emph default
+, is defined as follows:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $point\textunderscore dist\left(t\right)=uniform\left(t-\varepsilon,~t+\varepsilon\right),~\varepsilon\rightarrow\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+point_dist
+\emph default
+ allows one to create crisp intervals, this is demonstrated in Fig 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Point-Dist"
+
+\end_inset
+
+.
+ Another requirement for 
+\emph on
+REDC-IA
+\emph default
+ is to handle interval relations in a manner that is analogous to the original
+ IA.
+ Three functions are defined to do so:
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\emph on
+before(dist_1, dist_2), same(dist_1, dist_2) and after(dist_1, dist_2)
+\end_layout
+
+\begin_layout Standard
+Having an implementation of the above functions at hand, one can calculate
+ degrees for each of the thirteen Allen relations.
+ Taking the 
+\emph on
+{s}
+\emph default
+ (starts) relation example from Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Allen-Interval-Algebra"
+
+\end_inset
+
+, the degree for 
+\emph on
+a{s}b
+\emph default
+ is calculated as:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $same\left(dist\textunderscore beg_{a},~dist\textunderscore beg_{b}\right)\times before\left(dist\textunderscore beg_{a},~dist\textunderscore end_{b}\right)\times after\left(dist\textunderscore end_{a},~dist\textunderscore beg_{b}\right)\times before\left(dist\textunderscore end_{a},~dist\textunderscore end_{b}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Operation-Mapping"
+
+\end_inset
+
+ shows the mapping from crisp interval relations to distributional event
+ relations.
+ One can calculate degree values for all of the IA relations in a manner
+ similar to the above example.
+ These degree values can represent fuzzy degrees or probability values according
+ to their corresponding implementation, the only requirement is that they
+ be within 
+\emph on
+[0, 1]
+\emph default
+.
+ The original IA operations then can be mapped as follows:
+\end_layout
+
+\begin_layout Description
+Complement 
+\emph on
+~r
+\emph default
+ is calculated as 
+\begin_inset Formula $1-R$
+\end_inset
+
+ for each 
+\emph on
+
+\begin_inset Formula $R\in r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Converse 
+\emph on
+!r
+\emph default
+ is obtained by substituting 
+\emph on
+a
+\emph default
+ and 
+\emph on
+b
+\emph default
+ in the relation's formula (which is defined in terms of 
+\emph on
+before
+\emph default
+, 
+\emph on
+same
+\emph default
+ and 
+\emph on
+after
+\emph default
+ this time around)
+\end_layout
+
+\begin_layout Description
+Intersection 
+\emph on
+r^s
+\emph default
+ is calculated as 
+\begin_inset Formula $min\left(R,~S\right)$
+\end_inset
+
+ for each 
+\begin_inset Formula $R=S,~R\in r~and~S\in s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Union 
+\emph on
+r+s
+\emph default
+ is calculated as 
+\begin_inset Formula $max\left(R,~S\right)$
+\end_inset
+
+ for each 
+\begin_inset Formula $R=S,~R\in r~and~S\in s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Composition 
+\emph on
+r.s
+\emph default
+ contains members based on the original IA composition table, but since
+ relations are not 
+\emph on
+TRUE
+\emph default
+ and 
+\emph on
+FALSE
+\emph default
+ anymore, there should be a mapping mechanism.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Composition"
+
+\end_inset
+
+ expands more on the composition problem.
+\end_layout
+
+\begin_layout Standard
+The fact that one can adopt a custom version of of 
+\emph on
+before
+\emph default
+, 
+\emph on
+same
+\emph default
+ and 
+\emph on
+after
+\emph default
+ shows that the 
+\emph on
+EXTN
+\emph default
+ requirement is satisfied.
+ Any implementation should qualify in the context of the three original
+ IA relation criteria, it should be 
+\emph on
+Distinct
+\emph default
+ in that the method partitions the relation space into 
+\emph on
+before
+\emph default
+, 
+\emph on
+same
+\emph default
+, and 
+\emph on
+after
+\emph default
+, 
+\emph on
+Exhaustive
+\emph default
+ so that it calculates a single value for each pair of distributions and
+ naturally 
+\emph on
+Quantitative
+\emph default
+ as it calculates a value for the relation between the two distributions,
+ regardless of their time-frames, but according to their relation (e.g.
+ geometric).
+ Sections 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Convolution"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Geometric-Mean"
+
+\end_inset
+
+ went on to describe two different implementations of 
+\emph on
+before
+\emph default
+, 
+\emph on
+same
+\emph default
+ and 
+\emph on
+after
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Fig2.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Point-Dist"
+
+\end_inset
+
+A crisp interval produced by 
+\emph on
+point_dist
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Operation-Mapping"
+
+\end_inset
+
+Crisp interval to Distributional event operation mapping
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Crisp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Distributional
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+point_1 = point_2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+same(dist_1, dist_2)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+point_1 < point_2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+before(dist_1, dist_2)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+point_1 > point_2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+after(dist_1, dist_2)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+A Trapezium Model of Fuzzy/Probabilistic Intervals
+\end_layout
+
+\begin_layout Standard
+Now that the temporal events are defined in their broad form, it gets to
+ the point of proposing a specific instance that is suitable for general
+ problems.
+ In doing so, it should be taken into account that such generalisation must
+ be capable of handling both uncertainty uncertainty types, direct and indirect
+ (described in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Fuzzy-Interval-Algebra"
+
+\end_inset
+
+).
+ In the case of indirect observation, it is a common practice to assume
+ a uniform uncertainty over the period of the beginning and ending intervals,
+ as in [1234].
+ Direct observation on the other hand often involves knowledge coming from
+ natural or artificial sources, most of such events have either normal or
+ exponential nature to them.
+ Interestingly, this has not been considered in related works in this area
+ such as [1234] and instead a uniform distribution of uncertainty has been
+ assumed.
+ However, it is understandable why this path is taken, uniform distribution
+ has the quality of being a meaningful average over the set of different
+ possible distributions.
+ Accordingly, the 
+\begin_inset Quotes eld
+\end_inset
+
+Trapezium Model
+\begin_inset Quotes erd
+\end_inset
+
+ qualifies as the suitable 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Fig4.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Trapezium"
+
+\end_inset
+
+A Trapezium
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Convolution"
+
+\end_inset
+
+Convolution Logic
 \end_layout
 
 \begin_layout Standard
@@ -3576,7 +4633,23 @@ Keyvan will describe the convolution approach to fuzzy interval relations,
  of "precedes")
 \end_layout
 
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Geometric-Mean"
+
+\end_inset
+
+Geometric Mean Logic
+\end_layout
+
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Composition"
+
+\end_inset
+
 Probabilistic Estimation of a Fuzzy Interval Relation Composition Table
 \end_layout
 
